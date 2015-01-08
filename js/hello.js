@@ -34,3 +34,23 @@ function withArgs(arg1, arg2) {
 }
 
 withArgs(hello, world);
+
+var Person = function(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+var person = new Person("bob", 25);
+console.log(person);
+
+var p = Person;
+
+Person.prototype.getOlder = function() {
+    this.age++;
+}
+
+person.getOlder();
+
+console.log(person);
+console.log(p);
+console.log(Person);
